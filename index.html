@@ -215,7 +215,7 @@
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<span class="pe-7s-close heading-3-icon"></span>
 		                <h2 class="heading-3">Fun Facts</h2>
-						<div class="fade-quote-carousel carousel slide" id="quote-carousel" data-ride="carousel" data-interval="3000">
+						<div class="fade-quote-carousel carousel slide" id="quote-carousel" data-ride="carousel" data-interval="5000">
 							<!-- Carousel indicators -->
 							<ol class="carousel-indicators">
 								<li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
@@ -550,24 +550,26 @@
 					<h2>Questions or comments ?</h2>
 					<span class="section-divider mb15"></span>
 					<p class="no-margin">Please inform us about it !</p>
+					<p id="emailErrorDivId" class="error"></p>
+					<p id="emailSuccessDivId"></p>
 				</div><!-- /.column -->
 			</div><!-- /.row -->
 			<div class="row">
-				<form class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 mt40">
-				  <div class="form-group">
-				    <label for="email">Email address</label>
-				    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-				    <h5 id="emailHelp" class="form-text text-muted mt5">We'll never share your email with anyone else.</h5>
-				  </div>
-				  <div class="form-group">
-				    <label for="password">Password</label>
-				    <input type="password" class="form-control" id="password">
-				  </div>
-				  <div class="form-group">
-				      <label for="comments">Comments</label>
-				      <textarea class="form-control" id="comments" rows="3"></textarea>
-				    </div>
-				  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				<form id="contactForm" name="contactform" class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 mt40">
+					<div class="form-group">
+						<label for="first_name">Name</label>
+						<input type="text" class="form-control" id="first_name" name="first_name">
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+						<h5 id="emailHelp" class="form-text text-muted mt5">We'll never share your email with anyone else.</h5>
+					</div>
+					<div class="form-group">
+						<label for="comments">Comments</label>
+						<textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+					</div>
+					<button type="button" class="btn btn-primary btn-lg" onclick="postMail()">Submit</button>
 				</form>
 			</div><!-- /.row -->
 		</div><!-- /.container -->

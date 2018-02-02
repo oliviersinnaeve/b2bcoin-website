@@ -2,7 +2,7 @@
 if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "javadeveloperbvba@gmail.com";
+    $email_to = "support@b2bcoin.xyz";
     $email_subject = "B2B Coin follow UP !!";
  
     function died($error) {

@@ -150,3 +150,28 @@ setInterval(function() {
         current = 1;
     } else current++;
 }, 2500);
+
+// SEND mail function //
+function postMail() {
+    jQuery('#emailErrorDivId').html("");
+    jQuery('#emailSuccessDivId').html("");
+
+    console.log(jQuery('#contactForm').serialize());
+
+    jQuery.post('assets/php/send-mail.php', jQuery('#contactForm').serialize())
+        .then(
+        function(data) {
+            data = JSON.parse(data);
+            if (data.html) {
+                jQuery('#emailSuccessDivId').html(data.html);
+            }
+        }, function(error) {
+            console.log("post error", error);
+            if (error.error) {
+                jQuery('#emailErrorDivId').html(error.error);
+            } else if (error.statusText) {
+                jQuery('#emailErrorDivId').html(error.statusText);
+            }
+        }
+    );
+}
