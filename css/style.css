@@ -1385,6 +1385,10 @@ footer hr {
     .dropdown:hover .dropdown-menu { display:block; opacity:1; }
 }
 
+@media (max-width: 768px){
+    #team .member-profile{ height: auto !important; }
+}
+
 @media (min-width: 768px) and (max-width:992px) {
 	#our-process h2 { font-size:28px; }
 	#our-process .process-content p { width:75%; font-size:16px; }
